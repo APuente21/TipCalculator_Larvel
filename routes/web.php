@@ -1,5 +1,9 @@
 <?php
 
+#New place holder routes for P3
+Route::get('/', 'TripController@index');
+Route::get('/process-form', 'TripController@processForm');
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
