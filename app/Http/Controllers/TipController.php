@@ -7,14 +7,14 @@ use Illuminate\Http\Request;
 class TipController extends Controller
 {
     public function index(){
-        return 'Show form';
+        return view('calculator.show');
     }
     
     public function processForm(){
         return 'check form and redirect';
     }
     
-    public function show(){
-        return 'view test';
+    public function show($title = null){
+        return view('book.show')->with(['title' => $title]);
     }
 }
