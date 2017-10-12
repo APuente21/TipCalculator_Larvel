@@ -4,6 +4,13 @@
 Route::get('/', 'TripController@index');
 Route::get('/process-form', 'TripController@processForm');
 
+Route::get('/env', function () {
+    dump(config('app.name'));
+    dump(config('app.env'));
+    dump(config('app.debug'));
+    dump(config('app.url'));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
