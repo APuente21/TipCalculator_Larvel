@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 class TipController extends Controller
 {
     public function index(){
-        return 'Show form'
+        return 'Show form';
     }
     
     public function processForm(){
-        return 'check form and redirect'
+        return 'check form and redirect';
+    }
+    
+    public function show(){
+        return 'view test';
     }
 }
