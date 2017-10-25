@@ -10,10 +10,11 @@
         <div class="text-center">
             <h1>Tip Calculator</h1>
         </div>
-        <form method="GET">
+        <form method="POST" action='/process-form'>
+            {{ csrf_field() }}
             <div class="form-div">
                 <label>Total Price</label>
-                <input type="text"  name="totalPrice" id="totalPrice"/>
+                <input type="text"  name="totalPrice" id="totalPrice" />
                 <p>Required </p>
             </div>
             <div class="form-div">
@@ -34,6 +35,21 @@
                 <input class="ckBox" type="checkbox" name="roundBill" checked/>
             </div>
             <input class="submit" type="submit" value="Calculate"/>
-        </form>         
+        </form>
+        
+        @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div> 
+        @endif
+        @if($split != null && count($errors) == 0)
+            <div class="alert alert-success">
+                {{$split}};
+            </div>
+        @endif
     </div>
 @endpush

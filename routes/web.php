@@ -1,10 +1,12 @@
 <?php
 
 #New place holder routes for P3
+Route::get('/', 'TipController@index');
 Route::get('/cal', 'TipController@index');
-Route::get('/process-form', 'TipController@processForm');
-Route::get('/view-test', 'TipController@show');
-Route::get('/book/{title}', 'TipController@show');
+Route::post('/process-form', 'TipController@processForm');
+Route::get('/cal/{split}', 'TipController@result');
+
+
 
 Route::get('/env', function () {
     dump(config('app.name'));
